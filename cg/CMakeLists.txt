@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.5) # 设置 CMake 最小版本
 
+MESSAGE(STATUS "MY_BUILD_PLATFORM: ${MY_BUILD_PLATFORM}")
+MESSAGE(STATUS "CMAKE_SYSTEM_NAME: ${CMAKE_SYSTEM_NAME}")
+
 project(cg) # 设置工程名
 
 # option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
@@ -14,5 +17,7 @@ project(cg) # 设置工程名
 
 add_subdirectory(vendor/GLFW)
 add_subdirectory(vendor/assimp)
+
 add_subdirectory(cgutils)
 add_subdirectory(subbinary)
+add_subdirectory(learnopengl)

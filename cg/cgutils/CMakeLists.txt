@@ -13,9 +13,54 @@ target_include_directories(${PROJECT_NAME}
     ${PROJECT_SOURCE_DIR}
 )
 
+
 # assimp, 头文件在 vendor/assimp/assimp-5.2.2/include/assimp 下面
-include_directories(vendor/assimp/assimp-5.2.2/include/)
+target_include_directories(${PROJECT_NAME}
+  PRIVATE
+  vendor/assimp/assimp-5.2.2/include/
+)
 target_link_libraries(${PROJECT_NAME} assimp)
 
+
 # glm, 头文件在 vendor/glm/glm-0.9.9.8/glm 下面
-include_directories(vendor/glm/glm-0.9.9.8)
+target_include_directories(${PROJECT_NAME}
+  PRIVATE
+  vendor/glm/glm-0.9.9.8
+)
+
+
+# glad2, 头文件在 vendor/GLAD/glad2_gles3.2_headeronly/include/glad 下面
+target_include_directories(${PROJECT_NAME}
+  PRIVATE
+  vendor/GLAD/glad2_gles3.2_headeronly/include
+)
+
+
+# glfw, 头文件在 vendor/GLFW/glfw-3.3.6/include/GLFW 下面
+target_include_directories(${PROJECT_NAME}
+  PRIVATE
+  vendor/GLFW/glfw-3.3.6/include
+)
+target_link_libraries(${PROJECT_NAME} glfw)
+
+
+# freeimage, 头文件和库都在目录 vendor/FreeImage/freeimage-3.18.0_ubuntu1804_gcc7.5.0 下面
+target_include_directories(${PROJECT_NAME}
+  PRIVATE
+  vendor/FreeImage/freeimage-3.18.0_ubuntu1804_gcc7.5.0
+)
+target_link_libraries(${PROJECT_NAME}
+  ${CMAKE_SOURCE_DIR}/vendor/FreeImage/freeimage-3.18.0_ubuntu1804_gcc7.5.0/libfreeimage.so
+)
+
+
+# freetype, 头文件在目录 vendor/FreeType/freetype-2.11.1_ubuntu1804_gcc7.5.0/include/freetype2 下面
+# freetype, 库在目录 vendor/FreeType/freetype-2.11.1_ubuntu1804_gcc7.5.0/lib 下面
+target_include_directories(${PROJECT_NAME}
+  PRIVATE
+  ${CMAKE_SOURCE_DIR}/vendor/FreeType/freetype-2.11.1_ubuntu1804_gcc7.5.0/include/freetype2
+)
+target_link_libraries(${PROJECT_NAME}
+  ${CMAKE_SOURCE_DIR}/vendor/FreeType/freetype-2.11.1_ubuntu1804_gcc7.5.0/lib/libfreetype.so
+)
+

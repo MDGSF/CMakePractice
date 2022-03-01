@@ -1,4 +1,4 @@
-project(subbinary) # 设置工程名
+project(hello_triangle) # 设置工程名
 
 SET(CMAKE_CXX_STANDARD 11)
 SET(CMAKE_CXX_STANDARD_REQUIRED ON)
