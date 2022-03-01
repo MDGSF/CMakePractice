@@ -56,7 +56,7 @@ target_include_directories(${PROJECT_NAME}
   PRIVATE
   ${CMAKE_SOURCE_DIR}/vendor/GLFW/glfw-3.3.6/include
 )
-target_link_libraries(${PROJECT_NAME} glfw ${GLFW_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} glfw)
 
 
 # freeimage, 头文件和库都在目录 vendor/FreeImage/freeimage-3.18.0_ubuntu1804_gcc7.5.0 下面
