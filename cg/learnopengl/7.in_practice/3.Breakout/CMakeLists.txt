@@ -10,6 +10,9 @@ SET(CMAKE_CXX_FLAGS_RELEASE "-std=c++11 -Wall -Wno-unused-local-typedefs -Wno-un
 
 add_executable(${PROJECT_NAME}
   main.cpp
+  shader.cpp
+  stb_image.cpp
+  texture.cpp
   ${CMAKE_SOURCE_DIR}/vendor/GLAD/glad1_gl4.6/src/glad.c
 ) # 生成可执行文件
 
@@ -77,6 +80,13 @@ target_include_directories(${PROJECT_NAME}
 )
 target_link_libraries(${PROJECT_NAME}
   ${CMAKE_SOURCE_DIR}/vendor/FreeType/freetype-2.11.1_ubuntu1804_gcc7.5.0/lib/libfreetype.so
+)
+
+
+# stb
+target_include_directories(${PROJECT_NAME}
+  PRIVATE
+  ${CMAKE_SOURCE_DIR}/vendor/stb/stb_20220301
 )
 
 
