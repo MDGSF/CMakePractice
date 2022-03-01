@@ -58,3 +58,13 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 
+# freetype, 头文件在目录 vendor/FreeType/freetype-2.11.1_ubuntu1804_gcc7.5.0/include/freetype2 下面
+# freetype, 库在目录 vendor/FreeType/freetype-2.11.1_ubuntu1804_gcc7.5.0/lib 下面
+target_include_directories(${PROJECT_NAME}
+  PRIVATE
+  ${CMAKE_SOURCE_DIR}/vendor/FreeType/freetype-2.11.1_ubuntu1804_gcc7.5.0/include/freetype2
+)
+target_link_libraries(${PROJECT_NAME}
+  ${CMAKE_SOURCE_DIR}/vendor/FreeType/freetype-2.11.1_ubuntu1804_gcc7.5.0/lib/libfreetype.so
+)
+
