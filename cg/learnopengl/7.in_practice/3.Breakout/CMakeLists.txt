@@ -99,5 +99,15 @@ target_include_directories(${PROJECT_NAME}
 )
 
 
+# irrKlang
+target_include_directories(${PROJECT_NAME}
+  PRIVATE
+  ${CMAKE_SOURCE_DIR}/vendor/irrKlang/irrKlang-1.6.0/irrKlang-64bit-1.6.0/include
+)
+target_link_libraries(${PROJECT_NAME}
+  ${CMAKE_SOURCE_DIR}/vendor/irrKlang/irrKlang-1.6.0/irrKlang-64bit-1.6.0/bin/linux-gcc-64/libIrrKlang.so
+)
+
+
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})
 
