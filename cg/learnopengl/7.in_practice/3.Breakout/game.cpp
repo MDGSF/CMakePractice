@@ -1,3 +1,7 @@
+#include <algorithm>
+#include <sstream>
+#include <iostream>
+
 #include "game.h"
 
 Game::Game(unsigned int width, unsigned int height) {

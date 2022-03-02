@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 3.5) # 设置 CMake 最小版本
 MESSAGE(STATUS "MY_BUILD_PLATFORM: ${MY_BUILD_PLATFORM}")
 MESSAGE(STATUS "CMAKE_SYSTEM_NAME: ${CMAKE_SYSTEM_NAME}")
 
+configure_file(configuration/root_directory.h.in configuration/root_directory.h)
+include_directories(${CMAKE_BINARY_DIR}/configuration)
+
 project(cg) # 设置工程名
 
 # option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
