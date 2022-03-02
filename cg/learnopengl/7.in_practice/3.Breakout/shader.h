@@ -15,7 +15,7 @@ public:
   unsigned int ID;
 
   Shader();
-  Shader& use();
+  Shader& Use();
   void Compile(const char* vertexSource, const char* fragmentSource,
       const char* geometrySource = nullptr);
   void setFloat(const char* name, float value, bool useShader = false);
@@ -31,7 +31,7 @@ public:
       bool useShader = false);
   void setVector4f(const char* name, const glm::vec4& value,
       bool useShader = false);
-  void setMatrix4(const char* name, const glm::mat4& value,
+  void setMatrix4(const char* name, const glm::mat4& matrix,
       bool useShader = false);
 
 private:
