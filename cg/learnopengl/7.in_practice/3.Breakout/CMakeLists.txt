@@ -9,6 +9,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "-std=c++11 -Wall -Wno-unused-local-typedefs -Wno-un
 
 
 add_executable(${PROJECT_NAME}
+  game_level.cpp
   game_object.cpp
   main.cpp
   post_processor.cpp
