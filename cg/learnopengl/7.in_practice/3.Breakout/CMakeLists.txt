@@ -11,6 +11,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "-std=c++11 -Wall -Wno-unused-local-typedefs -Wno-un
 add_executable(${PROJECT_NAME}
   main.cpp
   shader.cpp
+  sprite_renderer.cpp
   stb_image.cpp
   texture.cpp
   ${CMAKE_SOURCE_DIR}/vendor/GLAD/glad1_gl4.6/src/glad.c
