@@ -10,6 +10,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "-std=c++11 -Wall -Wno-unused-local-typedefs -Wno-un
 
 add_executable(${PROJECT_NAME}
   main.cpp
+  resource_manager.cpp
   shader.cpp
   sprite_renderer.cpp
   stb_image.cpp
