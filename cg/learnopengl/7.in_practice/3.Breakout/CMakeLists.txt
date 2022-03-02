@@ -14,6 +14,7 @@ add_executable(${PROJECT_NAME}
   shader.cpp
   sprite_renderer.cpp
   stb_image.cpp
+  text_renderer.cpp
   texture.cpp
   ${CMAKE_SOURCE_DIR}/vendor/GLAD/glad1_gl4.6/src/glad.c
 ) # 生成可执行文件
