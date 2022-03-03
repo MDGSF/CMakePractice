@@ -29,6 +29,9 @@ GameObject::GameObject(
 {
 }
 
+GameObject::~GameObject() {
+}
+
 void GameObject::Draw(SpriteRenderer &renderer) {
   renderer.DrawSprite(
       this->Sprite,

@@ -1,6 +1,6 @@
 #include "sprite_renderer.h"
 
-SpriteRenderer::SpriteRenderer(Shader &shader) {
+SpriteRenderer::SpriteRenderer(Shader shader) {
   this->shader = shader;
   this->initRenderData();
 }
@@ -10,7 +10,7 @@ SpriteRenderer::~SpriteRenderer() {
 }
 
 void SpriteRenderer::DrawSprite(
-  Texture2D &texture,
+  Texture2D texture,
   glm::vec2 position,
   glm::vec2 size,
   float rotate,
