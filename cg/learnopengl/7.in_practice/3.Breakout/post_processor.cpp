@@ -23,8 +23,16 @@ PostProcessor::PostProcessor(
   glRenderbufferStorageMultisample(GL_RENDERBUFFER, 4, GL_RGB, width, height);
   glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
       GL_RENDERBUFFER, this->RBO);
-  if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
-    std::cout << "ERROR:POSTPROCESSOR: Failed to init MSFBO" << std::endl;
+  GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
+  if (status != GL_FRAMEBUFFER_COMPLETE) {
+    std::cout << "ERROR:POSTPROCESSOR: Failed to init MSFBO: " << status << ", "
+      << "width: " << width << ", "
+      << "height: " << height << ", "
+      << "GL_FRAMEBUFFER_DEFAULT_WIDTH: " << GL_FRAMEBUFFER_DEFAULT_WIDTH << ", "
+      << "GL_FRAMEBUFFER_DEFAULT_HEIGHT: " << GL_FRAMEBUFFER_DEFAULT_HEIGHT << ", "
+      << "GL_MAX_FRAMEBUFFER_WIDTH: " << GL_MAX_FRAMEBUFFER_WIDTH << ", "
+      << "GL_MAX_FRAMEBUFFER_HEIGHT: " << GL_MAX_FRAMEBUFFER_HEIGHT << ", "
+      << std::endl;
   }
 
   glBindFramebuffer(GL_FRAMEBUFFER, this->FBO);

@@ -175,6 +175,8 @@ void Game::Init() {
       ResourceManager::GetTexture("face"));
 
   // audio
+  std::string breakoutMP3Path = FileSystem::getPath("learnopengl/resources/audio/breakout.mp3").c_str();
+  std::cout << "breakoutMP3Path: " << breakoutMP3Path << std::endl;
   SoundEngine->play2D(
       FileSystem::getPath("learnopengl/resources/audio/breakout.mp3").c_str(),
       true);

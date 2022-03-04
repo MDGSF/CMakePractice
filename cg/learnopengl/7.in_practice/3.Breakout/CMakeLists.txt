@@ -112,6 +112,15 @@ target_link_libraries(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})
 
 
+add_custom_command(
+  TARGET ${PROJECT_NAME} POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy
+    ${CMAKE_SOURCE_DIR}/vendor/irrKlang/irrKlang-1.6.0/irrKlang-64bit-1.6.0/bin/linux-gcc-64/ikpFlac.so
+    ${CMAKE_SOURCE_DIR}/vendor/irrKlang/irrKlang-1.6.0/irrKlang-64bit-1.6.0/bin/linux-gcc-64/ikpMP3.so
+    ${CMAKE_SOURCE_DIR}/vendor/irrKlang/irrKlang-1.6.0/irrKlang-64bit-1.6.0/bin/linux-gcc-64/libIrrKlang.so
+    ${CMAKE_CURRENT_BINARY_DIR})
+
+
 file(GLOB vsFiles "*.vs")
 file(GLOB fsFiles "*.fs")
 set(shaderFiles ${vsFiles} ${fsFiles})

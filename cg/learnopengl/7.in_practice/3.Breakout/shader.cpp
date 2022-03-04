@@ -18,12 +18,14 @@ void Shader::Compile(
   glShaderSource(sVertex, 1, &vertexSource, NULL);
   glCompileShader(sVertex);
   checkCompileErrors(sVertex, "VERTEX");
+  std::cout << "compile vertex shader success: " << sVertex << std::endl;
 
   // fragment shader
   unsigned int sFragment = glCreateShader(GL_FRAGMENT_SHADER);
   glShaderSource(sFragment, 1, &fragmentSource, NULL);
   glCompileShader(sFragment);
   checkCompileErrors(sFragment, "FRAGMENT");
+  std::cout << "compile fragment shader success: " << sFragment << std::endl;
 
   // geometry shader
   unsigned int gShader = 0;
@@ -32,6 +34,7 @@ void Shader::Compile(
     glShaderSource(gShader, 1, &geometrySource, NULL);
     glCompileShader(gShader);
     checkCompileErrors(gShader, "GEOMETRY");
+    std::cout << "compile geometry shader success: " << gShader << std::endl;
   }
 
   // program
@@ -42,7 +45,9 @@ void Shader::Compile(
     glAttachShader(this->ID, gShader);
   }
   glLinkProgram(this->ID);
-  checkCompileErrors(gShader, "PROGRAM");
+  checkCompileErrors(this->ID, "PROGRAM");
+
+  std::cout << "link program success" << std::endl;
 
   // delete the shaders as they're linked into our program now
   // and no longer necessary
