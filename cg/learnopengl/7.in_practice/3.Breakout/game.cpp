@@ -35,6 +35,8 @@ Game::Game(unsigned int width, unsigned int height)
     Level(0),
     Lives(3)
 {
+  //std::string a = FileSystem::getPath("learnopengl/resources/audio/breakout.mp3");
+  //std::cout << "a = " << a << std::endl;
 }
 
 Game::~Game() {

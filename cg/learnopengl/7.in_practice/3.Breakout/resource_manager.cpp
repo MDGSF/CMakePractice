@@ -15,6 +15,10 @@ Shader ResourceManager::LoadShader(
   const char* fShaderFile,
   const char* gShaderFile,
   std::string name) {
+  std::cout << "start load shader: " << name << ", "
+    << "vShaderFile: " << vShaderFile << std::endl
+    << "fShaderFile: " << fShaderFile << std::endl
+    << std::endl;
   Shaders[name] = loadShaderFromFile(vShaderFile, fShaderFile, gShaderFile);
   return Shaders[name];
 }

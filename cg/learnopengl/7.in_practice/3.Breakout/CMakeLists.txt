@@ -111,3 +111,13 @@ target_link_libraries(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})
 
+
+file(GLOB vsFiles "*.vs")
+file(GLOB fsFiles "*.fs")
+set(shaderFiles ${vsFiles} ${fsFiles})
+foreach(file ${shaderFiles})
+  add_custom_command(
+    TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy ${file} ${CMAKE_CURRENT_BINARY_DIR})
+endforeach()
+
