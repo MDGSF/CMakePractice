@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+mkdir -p build
+cd build
+
 cmake \
-  -B build \
-  -S glfw-3.3.6 \
   -DCMAKE_BUILD_TYPE=Release \
-  -DBUILD_SHARED_LIBS=ON
+  -DBUILD_SHARED_LIBS=ON \
+  ..
 
 make -j4
 
